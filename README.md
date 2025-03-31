@@ -1,70 +1,162 @@
-# Getting Started with Create React App
+# BST Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack application for visualizing and exploring Binary Search Trees (BSTs).
 
-## Available Scripts
+![BST Explorer Screenshot](screenshot.png)
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+BST Explorer allows users to create, visualize, and explore Binary Search Trees. Users can input a series of numbers, and the application constructs a tree visualization, showing how the numbers are organized in a BST structure. The application also supports balanced trees and maintains a history of previously created trees.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Binary Search Tree Creation**: Create BSTs from user-provided numbers
+- **Tree Visualization**: Interactive visualization of tree structures using D3.js
+- **Balanced Tree Option**: Option to create balanced BSTs for optimal performance
+- **History Tracking**: View and revisit previously created trees
+- **RESTful API**: Well-designed API for tree operations
 
-### `npm test`
+## Technology Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend
 
-### `npm run build`
+- **Java Spring Boot**: For the server-side application
+- **Spring Data JPA**: For database operations
+- **H2 Database**: For data storage
+- **JUnit**: For unit testing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **React**: For building the user interface
+- **React Router**: For client-side routing
+- **D3.js**: For tree visualization
+- **Axios**: For API communication
+- **Bootstrap**: For responsive design
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Java JDK 11 or higher
+- Node.js 14+ and npm
+- Maven
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Running the Backend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone the repository
+2. Navigate to the backend directory
+   ```bash
+   cd bst-explorer
+   ```
+3. Build the project
+   ```bash
+   mvn clean install
+   ```
+4. Run the application
+   ```bash
+   mvn spring-boot:run
+   ```
+   The backend will start on http://localhost:8080
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Running the Frontend
 
-## Learn More
+1. Navigate to the frontend directory
+   ```bash
+   cd bst-explorer-client
+   ```
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+3. Start the development server
+   ```bash
+   npm start
+   ```
+   The frontend will start on http://localhost:3000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## API Endpoints
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Method | Endpoint        | Description              |
+| ------ | --------------- | ------------------------ |
+| POST   | /api/trees      | Create a new BST         |
+| GET    | /api/trees/{id} | Retrieve a specific tree |
+| GET    | /api/trees      | List all trees           |
 
-### Code Splitting
+## Binary Search Tree Concepts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Regular BST
 
-### Analyzing the Bundle Size
+A binary search tree is a tree data structure where each node has at most two children, and all nodes follow the property that nodes in the left subtree have values less than the node's value, and nodes in the right subtree have values greater than the node's value.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Balanced BST
 
-### Making a Progressive Web App
+A balanced BST ensures that the height difference between the left and right subtrees of every node is no more than one. This balancing ensures optimal O(log n) performance for search, insert, and delete operations.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Screenshots
 
-### Advanced Configuration
+### Create Tree Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![Create Tree](create-tree.png)
 
-### Deployment
+### Tree Visualization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![Tree Visualization](tree-viz.png)
 
-### `npm run build` fails to minify
+### Previous Trees
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Previous Trees](previous-trees.png)
+
+## Future Enhancements
+
+- Additional tree operations (delete, search)
+- Different tree visualization layouts
+- Animation of tree construction process
+- Support for other balanced tree types (AVL, Red-Black)
+- Export/import tree configurations
+
+## Project Structure
+
+### Backend Structure
+
+```
+bst-explorer/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── example/
+│   │   │           └── bstexplorer/
+│   │   │               ├── BstExplorerApplication.java
+│   │   │               ├── config/
+│   │   │               ├── controller/
+│   │   │               ├── model/
+│   │   │               ├── repository/
+│   │   │               └── service/
+│   │   └── resources/
+│   │       └── application.properties
+│   └── test/
+│       └── java/
+```
+
+### Frontend Structure
+
+```
+bst-explorer-client/
+├── public/
+├── src/
+│   ├── components/
+│   ├── services/
+│   ├── App.js
+│   └── index.js
+├── package.json
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Data Structures and Algorithms course
+- D3.js community for visualization examples
+- Spring Boot and React documentation
