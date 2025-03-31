@@ -106,50 +106,6 @@ A balanced BST ensures that the height difference between the left and right sub
 
 ![Previous Trees](public/three.png)
 
-## Future Enhancements
-
-- Additional tree operations (delete, search)
-- Different tree visualization layouts
-- Animation of tree construction process
-- Support for other balanced tree types (AVL, Red-Black)
-- Export/import tree configurations
-
-## Project Structure
-
-### Backend Structure
-
-```
-bst-explorer/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── example/
-│   │   │           └── bstexplorer/
-│   │   │               ├── BstExplorerApplication.java
-│   │   │               ├── config/
-│   │   │               ├── controller/
-│   │   │               ├── model/
-│   │   │               ├── repository/
-│   │   │               └── service/
-│   │   └── resources/
-│   │       └── application.properties
-│   └── test/
-│       └── java/
-```
-
-### Frontend Structure
-
-```
-bst-explorer-client/
-├── public/
-├── src/
-│   ├── components/
-│   ├── services/
-│   ├── App.js
-│   └── index.js
-├── package.json
-```
 
 ## License
 
