@@ -2,7 +2,7 @@
 
 A full-stack application for visualizing and exploring Binary Search Trees (BSTs).
 
-![BST Explorer Screenshot](screenshot.png)
+![BST Explorer Screenshot](/main.png)
 
 ## Overview
 
