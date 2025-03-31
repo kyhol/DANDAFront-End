@@ -96,15 +96,15 @@ A balanced BST ensures that the height difference between the left and right sub
 
 ### Create Tree Page
 
-![Create Tree](create-tree.png)
+![Create Tree](public/two.png)
 
 ### Tree Visualization
 
-![Tree Visualization](tree-viz.png)
+![Tree Visualization](public/one.png)
 
 ### Previous Trees
 
-![Previous Trees](previous-trees.png)
+![Previous Trees](public/three.png)
 
 ## Future Enhancements
 
